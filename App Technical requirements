@@ -1,0 +1,118 @@
+Introduction
+
+
+This document details the project plan for the development of “nanaChat”.
+It is intended for developers, designers and testers working on “nanaChat” as well as project investors. This plan
+will include a summary of:
+
+
+
+
+• how the system will work
+• the scope of the project from a development perspective
+• the technology used to develop the project, and
+• metrics used to determine project progress
+• General description
+
+Businesses need remote communication tools, especially now that more people are working from home. The
+problem is that most businesses end up using multiple apps to accomplish this: one for text chat, one for video
+chat, and one for conferencing and meetings. “nanaChat” will solve this problem by combining these features
+in one application.
+
+
+
+
+Clients
+The customers will be businesses. It will not target the general public.
+Functionality
+• Users should be able to register with enterprise LDAP accounts.
+• Users should be able to create ad hoc newsgroups comprising sets of users and send private
+messages to individual users.
+• Users should be able to have text chats that they can divide into threads.
+• The app should be able to handle group video chat for up to 100 users at a time.
+
+
+
+
+Platform
+The application will be developed in React Native to allow the creation of a web application, an iOS mobile
+application and an Android mobile application.
+These applications will connect to a REST API built with . Laravel to store and retrieve data from a MySQL database
+and the front end will be developed in React.
+Authentication will be done via an LDAP directory.
+We will use a WAF to protect our application since traditional firewalls do not take into account all attacks, namely
+SQL injections.
+
+Tests and deployment will be done with Jenkins (Dev + test + deploy)
+
+Development Responsibilities
+The developers of the “nanaChat” team will be responsible for writing all application code, database
+development and version management.
+
+User class and characteristics
+There will be a user class called administrator who will have permissions to access all features of the
+application, including:
+• Create channels where multiple users can interact
+• Make these channels public to the entire company or private to a group of people
+• Delete these channels
+• Archiving these channels
+Standard users will have access to all app features except those listed above.
+
+
+System Features
+
+Functional requirements
+• Users should be able to create ad hoc newsgroups comprising sets of users and send private
+messages to other users.
+• Users should be able to have text chats that they can divide into threads.
+• Discussions should be able to be archived indefinitely so that users can reference past discussions.
+• Users should be able to upload files to discussions for reference.
+• External interface requirements
+User interfaces
+• Front-end software: React Native
+• Back-end software: Laravel
+• Database software: MySQL
+• LDAP Connection: Authentication in an Enterprise Environment
+Hardware interfaces
+• Mac and Windows operating systems through their default web browser
+• iPhone
+• Android
+• Non-functional prerogatives
+
+Performance requirements
+• The app should load and be usable within 3 seconds
+• The application should update the interface upon interaction within 2 seconds
+• The database should be normalized to avoid redundant data and improve performance
+• The database must be distributed to avoid outages
+
+Security requirements
+• Databases should use partitioning to be redundant to avoid data loss.
+• Database backups should be performed hourly and retained for one week.
+
+
+Security requirements
+• All keys used for the REST API must be stored securely.
+• Only the REST API should be able to connect to databases.
+• Databases must be behind a firewall.
+• Use a WAF to protect our web application from all attacks not remedied by the firewall
+Software quality attributes
+• Uptime: Since this application is essential for business communication, we will have an uptime target of four
+nines (99.99%).
+• Accuracy: The application must never allow anyone to read messages or discussions that are not intended
+for them.
+• Maintainability: The application should use continuous integration so that features and bug fixes
+can be deployed quickly without downtime.
+• Usability: The interface should be easy to learn without tutorials and allow users to achieve their goals
+without errors.
+
+
+
+
+
+
+Summary
+An SRS document is a necessary element for carrying out a software development project. It is the roadmap that
+provides direction to everyone involved in the project, so that the final product meets the needs of the students.
+Without a complete SRS document in place before starting a project, it will be difficult to tell when a project is
+complete and could divert development into creating unintended features. An SRS document gives you the ability
+to estimate a project accurately and assign tasks efficiently.
